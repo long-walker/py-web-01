@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safelisted Payers</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">List of Safelisted Payers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Account Number</th>
+                <th>Bank Account Country</th>
+                <th>Payer's Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payer in payers %}
+            <tr>
+                <td>{{ payer.name }}</td>
+                <td>{{ payer.account_number }}</td>
+                <td>{{ payer.bank_account_country }}</td>
+                <td>{{ payer.payer_country }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
